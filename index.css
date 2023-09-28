@@ -1,0 +1,137 @@
+
+/* universal selector */
+* {
+    box-sizing: border-box;
+}
+
+
+/* document's root */
+:root {
+    --main-color: darkblue;
+}
+
+
+/* tag selector */
+h1 {
+    background-color: aquamarine;
+}
+
+/* class selector */
+.description {
+    color: blueviolet
+}
+
+/* (descendant selector) within elements (parent, child) */
+.selectors .description {
+    font-weight: 800;
+}
+
+/* select both element */
+.btn-main.active {
+    background-color: blue;   
+    color: #fff;
+}
+
+/* id selector */
+#btn-reset {
+    background-color: coral;
+    color: #fff;
+}
+
+/* select all elements */
+.btn-main, #btn-reset {
+    border: none;
+    padding: .3rem .5rem;
+}
+
+/* child selector */
+.selectors > h4 {
+    background-color: darkred;
+    color: #fff;
+}
+
+/* btn hover */
+#btn-reset:hover {
+    background-color: yellow !important;
+}
+
+/* Adjacent Sibling Selector (+) */
+.description+h4::before {
+    content: "before code --";
+}
+
+
+/* General Sibling Selector */
+.description+h4~button {
+    font-size: 0.8rem;
+}
+
+/* attribute selector without value */
+[href] {
+    font-size: 1.5rem;
+}
+
+/* attribute selector with value */
+[href="/home"] {
+    background-color: green;
+    padding: .3rem .5rem;
+}
+
+/* equal to "/flower" or starting with "/flower" */
+[href|="/flower"] {
+    background: brown;
+}
+
+/*  begins with "/blog-" */
+a[href^="/blog-"] {
+    background-color: orange;
+}
+
+.btn-group {
+    padding: 20px 0;
+}
+
+.form-container {
+    background-color: var(--main-color);
+    color: #fff;
+}
+
+/* active selector */
+.form-container .btn-group button:active {
+    transform: scale(0.95);
+}
+
+/* selects every checked <input> element */
+.form-container fieldset > div input:checked {
+    height: 20px;
+    width: 20px;
+}
+
+/* Selects every disabled button element */
+.form-container .confirm-btn:disabled {
+    color: #fff;
+}
+
+/* Selects every <li> element that is the first child of its parent */
+.lorem-list ul li:first-child {
+    color: green;
+}
+
+/* Selects every <p> element that is the last child of its parent */
+.lorem-list ul li:last-child {
+    color: blue;
+}
+
+.lorem-list ul li:nth-child(2) {
+    color: pink;
+}
+
+/* 	Selects the markers of list items */
+.lorem-list ul li::marker {
+    color: red;
+}
+
+/* focus selector */
+input:focus {
+    background-color: red;
+}
